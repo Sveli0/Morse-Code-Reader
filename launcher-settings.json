@@ -26,12 +26,6 @@ void loop()
   while (digitalRead(4) == 1)
   {
     sec = (sec + 1);
-    if (sec < 50)
-    {
-        lastLetter += "0";
-    }
-    else lastLetter += "1";
-
     Serial.println(sec);
   }
   
@@ -39,15 +33,112 @@ void loop()
 
   if (digitalRead(7) == 1)
   {
-    switch(lastLetter);
-    lastLetter = "";
+    letter lastLetterArr "";
   }
-  Serial.println(lastLetter);
-
+  
+  Console.WriteLine(sequlastLetter);
   delay(10); // Delay a little bit to improve simulation performance
 }
 
-void switch(String a)
+char switch(String a)
 {
-  switch
+  char result='';
+  switch(a) {
+    case "01":
+    result='a';
+    break;
+
+    case "1000":
+    result='b';
+    break;
+    
+    case "1010":
+    result = 'c';
+    break;
+
+    case "100":
+    result = 'd';
+    break;
+
+    case "0":
+    result = 'e';
+    break;
+
+    case "0010":
+    result = 'f';
+    break;
+
+    case "110":
+    result = 'g';
+    break;
+
+    case "0000":
+    result = 'h';
+    break;
+
+    case "00":
+    result = 'i';
+    break;
+
+    case "0111":
+    result = 'j';
+    break;
+
+    case "11":
+    result = 'm';
+    break;
+
+    case "10":
+    result = 'n';
+    break;
+
+    case "111":
+    result = 'o';
+    break;
+
+    case "0110":
+    result = 'p';
+    break;
+
+    case "1101":
+    result = 'q';
+    break;
+
+    case "010":
+    result = 'r';
+    break;
+
+    case "000":
+    result = 's';
+    break;
+
+    case "1":
+    result = 't';
+    break;
+
+    case "001":
+    result = 'u';
+    break;
+
+    case "0001":
+    result = 'v';
+    break;
+
+    case "011":
+    result = 'w';
+    break;
+
+    case "1001":
+    result = 'x';
+    break;
+
+    case "1001":
+    result = 'y';
+    break;
+
+    case "1100":
+    result = 'z';
+    break;
+  }
+  return result;
 }
