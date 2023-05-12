@@ -49,7 +49,7 @@ void loop()
   delay(10); // Delay a little bit to improve simulation performance
 }
 
-char switch(String a)
+char switchMethod(String a)
 {
   char result='';
   switch(a) {
@@ -147,6 +147,10 @@ char switch(String a)
 
     case "1100":
     result = 'z';
+    break;
+
+    default:
+    result = ' ';
     break;
   }
   return result;
