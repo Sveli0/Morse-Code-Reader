@@ -26,23 +26,25 @@ void loop()
   while (digitalRead(4) == 1)
   {
     sec = (sec + 1);
+
     if (sec < 50)
     {
         lastLetter += "0";
     }
     else lastLetter += "1";
 
-    Serial.println(sec);
+    //Serial.println(sec);
   }
   
   sec = 0;
 
   if (digitalRead(7) == 1)
   {
+    //Serial.println(lastLetter);
+    
     switch(lastLetter);
     lastLetter = "";
   }
-  Serial.println(lastLetter);
 
   delay(10); // Delay a little bit to improve simulation performance
 }
