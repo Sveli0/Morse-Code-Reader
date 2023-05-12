@@ -1,0 +1,46 @@
+// C++ code
+
+int sec = 0;
+
+String lastLetter = "";
+
+void setup()
+{
+  pinMode(4, INPUT);
+  pinMode(3, OUTPUT);
+  Serial.begin(9600);
+  pinMode(7, INPUT);
+}
+
+void loop()
+{
+  if (digitalRead(4) == 1)
+  {
+    analogWrite(3, 255);
+  }
+  else
+  {
+    analogWrite(3, 0);
+  }
+
+  while (digitalRead(4) == 1)
+  {
+    sec = (sec + 1);
+    Serial.println(sec);
+  }
+  
+  sec = 0;
+
+  if (digitalRead(7) == 1)
+  {
+    letter lastLetterArr ";
+  }
+  
+  Console.WriteLine(sequlastLetter 
+  delay(10); // Delay a little bit to improve simulation performance
+}
+
+void switch(String a)
+{
+  switch
+}
