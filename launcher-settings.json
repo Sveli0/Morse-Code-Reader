@@ -33,10 +33,9 @@ void loop()
 
   if (digitalRead(7) == 1)
   {
-    letter lastLetterArr ";
+    letter lastLetterArr "";
   }
-  
-  Console.WriteLine(sequlastLetter 
+
   delay(10); // Delay a little bit to improve simulation performance
 }
 
