@@ -33,7 +33,8 @@ void loop()
 
   if (digitalRead(7) == 1)
   {
-    letter lastLetter = "";
+    switch(lastLetter);
+    lastLetter = "";
   }
 
   delay(10); // Delay a little bit to improve simulation performance
