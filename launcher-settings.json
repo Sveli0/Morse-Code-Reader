@@ -1,5 +1,33 @@
 // C++ code
+const static std::unordered_map<std::string,int> string_to_case{
+   {"01",1},
+   {"1000",2},
+   {"1010",3},
+   {"100",4},
+   {"0",5},
+   {"0010",6},
+   {"110",7},
+   {"0000"8,},
+   {"00",9},
+   {"0111",10},
+   {"101",11},
+   {"0100",12},
+   {"11",13},
+   {"10",14},
+   {"111",15},
+   {"0110",16},
+   {"1101",17},
+   {"010",18},
+   {"000",19},
+   {"1",20},
+   {"001",21},
+   {"0001",22},
+   {"011",23},
+   {"1001",24},
+   {"1011",25},
+   {"1100",26}
 
+};
 int sec = 0;
 
 String lastLetter = "";
@@ -42,7 +70,7 @@ void loop()
   {
     //Serial.println(lastLetter);
     
-    switch(lastLetter);
+    switchMethod(lastLetter);
     lastLetter = "";
   }
 
@@ -51,101 +79,109 @@ void loop()
 
 char switchMethod(String a)
 {
-  char result='';
-  switch(a) {
-    case "01":
+  char result=' ';
+  switch(string_to_case.at(a)) {
+    case 1:
     result='a';
     break;
 
-    case "1000":
+    case 2:
     result='b';
     break;
     
-    case "1010":
+    case 3:
     result = 'c';
     break;
 
-    case "100":
+    case 4:
     result = 'd';
     break;
 
-    case "0":
+    case 5:
     result = 'e';
     break;
 
-    case "0010":
+    case 6:
     result = 'f';
     break;
 
-    case "110":
+    case 7:
     result = 'g';
     break;
 
-    case "0000":
+    case 8:
     result = 'h';
     break;
 
-    case "00":
+    case 9:
     result = 'i';
     break;
 
-    case "0111":
+    case 10:
     result = 'j';
     break;
 
-    case "11":
+    case 11:
+    result = 'k';
+    break;
+
+    case 12:
+    result = 'l';
+    break;
+
+    case 13:
     result = 'm';
     break;
 
-    case "10":
+    case 14:
     result = 'n';
     break;
 
-    case "111":
+    case 15:
     result = 'o';
     break;
 
-    case "0110":
+    case 16:
     result = 'p';
     break;
 
-    case "1101":
+    case 17:
     result = 'q';
     break;
 
-    case "010":
+    case 18:
     result = 'r';
     break;
 
-    case "000":
+    case 19:
     result = 's';
     break;
 
-    case "1":
+    case 20:
     result = 't';
     break;
 
-    case "001":
+    case 21:
     result = 'u';
     break;
 
-    case "0001":
+    case 22:
     result = 'v';
     break;
 
-    case "011":
+    case 23:
     result = 'w';
     break;
 
-    case "1001":
+    case 24:
     result = 'x';
     break;
 
-    case "1001":
+    case 25:
     result = 'y';
     break;
 
-    case "1100":
+    case 26:
     result = 'z';
     break;
 
