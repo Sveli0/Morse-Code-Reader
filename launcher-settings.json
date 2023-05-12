@@ -53,15 +53,17 @@ void loop()
 
   while (digitalRead(4) == 1)
   {
-    sec = (sec + 1);
-
+    while (digitalRead(4) ==1)
+    {
+      sec = (sec + 1);
+      //Serial.println(sec);
+    }
+    
     if (sec < 50)
     {
-        lastLetter += "0";
+      lastLetter += "0";
     }
     else lastLetter += "1";
-
-    //Serial.println(sec);
   }
   
   sec = 0;
@@ -69,7 +71,6 @@ void loop()
   if (digitalRead(7) == 1)
   {
     //Serial.println(lastLetter);
-    
     switchMethod(lastLetter);
     lastLetter = "";
   }
