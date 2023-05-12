@@ -1,33 +1,4 @@
 // C++ code
-const static std::unordered_map<std::string,int> string_to_case{
-   {"01",1},
-   {"1000",2},
-   {"1010",3},
-   {"100",4},
-   {"0",5},
-   {"0010",6},
-   {"110",7},
-   {"0000"8,},
-   {"00",9},
-   {"0111",10},
-   {"101",11},
-   {"0100",12},
-   {"11",13},
-   {"10",14},
-   {"111",15},
-   {"0110",16},
-   {"1101",17},
-   {"010",18},
-   {"000",19},
-   {"1",20},
-   {"001",21},
-   {"0001",22},
-   {"011",23},
-   {"1001",24},
-   {"1011",25},
-   {"1100",26}
-
-};
 int sec = 0;
 
 String lastLetter = "";
@@ -78,117 +49,33 @@ void loop()
   delay(10); // Delay a little bit to improve simulation performance
 }
 
-char switchMethod(String a)
+char improvisedSwitch(String a)
 {
-  char result=' ';
-  switch(string_to_case.at(a)) {
-    case 1:
-    result='a';
-    break;
-
-    case 2:
-    result='b';
-    break;
-    
-    case 3:
-    result = 'c';
-    break;
-
-    case 4:
-    result = 'd';
-    break;
-
-    case 5:
-    result = 'e';
-    break;
-
-    case 6:
-    result = 'f';
-    break;
-
-    case 7:
-    result = 'g';
-    break;
-
-    case 8:
-    result = 'h';
-    break;
-
-    case 9:
-    result = 'i';
-    break;
-
-    case 10:
-    result = 'j';
-    break;
-
-    case 11:
-    result = 'k';
-    break;
-
-    case 12:
-    result = 'l';
-    break;
-
-    case 13:
-    result = 'm';
-    break;
-
-    case 14:
-    result = 'n';
-    break;
-
-    case 15:
-    result = 'o';
-    break;
-
-    case 16:
-    result = 'p';
-    break;
-
-    case 17:
-    result = 'q';
-    break;
-
-    case 18:
-    result = 'r';
-    break;
-
-    case 19:
-    result = 's';
-    break;
-
-    case 20:
-    result = 't';
-    break;
-
-    case 21:
-    result = 'u';
-    break;
-
-    case 22:
-    result = 'v';
-    break;
-
-    case 23:
-    result = 'w';
-    break;
-
-    case 24:
-    result = 'x';
-    break;
-
-    case 25:
-    result = 'y';
-    break;
-
-    case 26:
-    result = 'z';
-    break;
-
-    default:
-    result = ' ';
-    break;
-  }
-  return result;
+  if(a=="01") return 'a';
+  else if(a=="1000") return'b';
+  else if(a=="1010") return'c';
+  else if(a=="100") return'd';
+  else if(a=="0") return'e';
+  else if(a=="0010") return'f';
+  else if(a=="110") return'g';
+  else if(a=="0000") return'h';
+  else if(a=="00") return'i';
+  else if(a=="0111") return'g';
+  else if(a=="101") return'k';
+  else if(a=="0100") return'l';
+  else if(a=="11") return'm';
+  else if(a=="10") return'n';
+  else if(a=="111") return'o';
+  else if(a=="0110") return'p';
+  else if(a=="1101") return'q';
+  else if(a=="010") return'r';
+  else if(a=="000") return's';
+  else if(a=="1") return't';
+  else if(a=="001") return'u';
+  else if(a=="0001") return'v';
+  else if(a=="011") return'w';
+  else if(a=="1001") return'x';
+  else if(a=="1011") return'y';
+  else if(a=="1100") return'z';
+  else return " ";
 }
