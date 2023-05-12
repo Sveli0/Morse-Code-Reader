@@ -30,19 +30,18 @@ void loop()
       sec = (sec + 1);
       //Serial.println(sec);
     }
-    
-    if (sec < 50)
+    if (sec < 8500)
     {
       lastLetter += "0";
     }
     else lastLetter += "1";
+    
+      sec = 0;
   }
-  
-  sec = 0;
 
   if (digitalRead(7) == 1)
   {
-    //Serial.println(lastLetter);
+    Serial.println(lastLetter);
     improvisedSwitch(lastLetter);
     lastLetter = "";
   }
