@@ -13,6 +13,7 @@ void setup()
 
 void loop()
 {
+
   if (digitalRead(4) == 1)
   {
     analogWrite(3, 255);
@@ -42,7 +43,7 @@ void loop()
   if (digitalRead(7) == 1)
   {
     //Serial.println(lastLetter);
-    switchMethod(lastLetter);
+    improvisedSwitch(lastLetter);
     lastLetter = "";
   }
 
