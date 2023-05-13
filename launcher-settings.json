@@ -1,6 +1,9 @@
 // C++ code
-int sec = 0;
+#include <LiquidCrystal.h>
 
+LiquidCrystal lcd(12, 11, 5, 8, 9, 2);
+
+int sec = 0;
 String lastLetter = "";
 
 void setup()
@@ -9,6 +12,7 @@ void setup()
   pinMode(3, OUTPUT);
   Serial.begin(9600);
   pinMode(7, INPUT);
+  lcd.begin(16, 1);
 }
 
 void loop()
@@ -41,8 +45,12 @@ void loop()
 
   if (digitalRead(7) == 1)
   {
-    Serial.println(lastLetter);
-    improvisedSwitch(lastLetter);
+    //Serial.println(lastLetter);
+    lcd.print(improvisedSwitch(lastLetter));
+    while (digitalRead(7) == 1)
+    {
+      
+    }
     lastLetter = "";
   }
 
