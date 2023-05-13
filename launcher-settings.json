@@ -1,9 +1,10 @@
 // C++ code
 #include <LiquidCrystal.h>
 
+//LCD display cables plugged in pins:
 LiquidCrystal lcd(2, 5, 10, 8, 11, 12);
 
-int sec = 0;
+int sec = 0; //This variable is used to identify if the button is pressed for a short period or a longer period, to know if the input is (.) or (-) in morse code
 String lastLetter = "";
 
 void setup()
@@ -17,50 +18,58 @@ void setup()
 
 void loop()
 {
-
   if (digitalRead(4) == 1)
   {
+    //If button connected to pin 4 is pressed:
+    //Light Bulb is on
     analogWrite(3, 255);
+    //Piezo is on
     analogWrite(6, 100000);
   }
   else
   {
+    //If button connected to pin 4 is not pressed:
+    //Bulb is off
     analogWrite(3, 0);
+    //Piezo is off
     analogWrite(6, 0);
   }
 
   while (digitalRead(4) == 1)
   {
+    //If button connected to pin 4 is pressed:
     while (digitalRead(4) ==1)
     {
-      if (sec < 8500)
+      //Checks again if button is pressed
+      if (sec < 8500) //If button is pressed for a short time the variable will be less than 8500
       {
       	sec = (sec + 1);
       }
-      else {}
+      else {} //Does nothing while the button is pressed to prevent the int variable from going back to negative numbers
     }
-    if (sec < 8500)
+    
+    if (sec < 8500) //Checks if button was pressed for a short time, adds (.) to the letter
     {
       lastLetter += "0";
     }
-    else lastLetter += "1";
+    else lastLetter += "1"; //Checks if button was pressed for longer, adds (-) to the letter
     
-    sec = 0;
+    sec = 0; //Resets variable
   }
 
   if (digitalRead(7) == 1)
   {
-    lcd.print(improvisedSwitch(lastLetter));
+    lcd.print(improvisedSwitch(lastLetter)); //Calls identification method to find which letter responds to the combination and prints it on the display
     while (digitalRead(7) == 1)
     {
-      
+      //Empty, it does nothing until letting the button off
     }
-    lastLetter = "";
+    lastLetter = ""; //The leter resets so the new one can start filling up
   }
   
   if (digitalRead(13) == 1)
   {
-    lcd.clear();
+    lcd.clear(); //This button clears the LCD display
   }
 
   delay(10); // Delay a little bit to improve simulation performance
@@ -68,6 +77,8 @@ void loop()
 
 char improvisedSwitch(String a)
 {
+  //The letter is string - for example 001 which is (..-) in morse code
+  //0 is (.) and 1 is (-)
   if(a=="01") return 'a';
   else if(a=="1000") return'b';
   else if(a=="1010") return'c';
