@@ -43,7 +43,7 @@ void loop()
       //Checks again if button is pressed
       if (sec < 8500) //If button is pressed for a short time the variable will be less than 8500
       {
-      	sec = (sec + 1);
+      	sec = (sec + 1); //Increases the variable until it reaches 8500. When it does, it is considered a long press and it would add (-) to the letter combination
       }
       else {} //Does nothing while the button is pressed to prevent the int variable from going back to negative numbers
     }
