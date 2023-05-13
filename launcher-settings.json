@@ -88,7 +88,7 @@ char improvisedSwitch(String a)
   else if(a=="110") return'g';
   else if(a=="0000") return'h';
   else if(a=="00") return'i';
-  else if(a=="0111") return'g';
+  else if(a=="0111") return'j';
   else if(a=="101") return'k';
   else if(a=="0100") return'l';
   else if(a=="11") return'm';
