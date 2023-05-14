@@ -41,14 +41,14 @@ void loop()
     while (digitalRead(4) ==1)
     {
       //Checks again if button is pressed
-      if (sec < 8500) //If button is pressed for a short time the variable will be less than 8500
+      if (sec < 10000) //If button is pressed for a short time the variable will be less than 10 000
       {
-      	sec = (sec + 1); //Increases the variable until it reaches 8500. When it does, it is considered a long press and it would add (-) to the letter combination
+      	sec = (sec + 1); //Increases the variable until it reaches 10 000. When it does, it is considered a long press and it would add (-) to the letter combination
       }
       else {} //Does nothing while the button is pressed to prevent the int variable from going back to negative numbers
     }
     
-    if (sec < 8500) //Checks if button was pressed for a short time, adds (.) to the letter
+    if (sec < 10000) //Checks if button was pressed for a short time, adds (.) to the letter
     {
       lastLetter += "0";
     }
